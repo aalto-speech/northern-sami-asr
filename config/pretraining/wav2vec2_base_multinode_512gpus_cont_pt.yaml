@@ -1,0 +1,72 @@
+# @package _group_
+# https://github.com/facebookresearch/fairseq/blob/main/examples/wav2vec/config/pretraining/wav2vec2_base_librispeech.yaml
+
+common:
+  fp16: true
+  log_format: json
+  log_interval: 50
+  log_file: /logs_B_512gpus.out
+  wandb_project: wav2vec2_base_sami_fin_cont
+
+checkpoint:
+  save_interval_updates: 250
+  keep_interval_updates: 1
+  keep_best_checkpoints: 10
+  no_epoch_checkpoints: true
+  save_dir: /outputs_B_512gpus
+  load_checkpoint_on_all_dp_ranks: true
+  reset_dataloader: true
+  reset_lr_scheduler: true
+  reset_meters: true
+  reset_optimizer: true
+  restore_file: /wav2vec2_base_fi_v2.pt
+
+task:
+  _name: audio_pretraining
+  data: /manifest_output
+  max_sample_size: 960000
+  min_sample_size: 32000
+  normalize: false
+
+dataset:
+  num_workers: 0
+  max_tokens: 3600000
+  validate_interval: 250
+  skip_invalid_size_inputs_valid_test: true
+
+distributed_training:
+  distributed_world_size: 512
+  distributed_port: 29400
+  nprocs_per_node: 8
+  ddp_backend: legacy_ddp
+
+criterion:
+  _name: wav2vec
+  infonce: true
+  log_keys: ["prob_perplexity","code_perplexity","temp"]
+  loss_weights: [0.1, 10]
+
+optimization:
+  max_update: 12500
+  update_freq: [1]
+  lr: [0.0001]
+
+optimizer:
+  _name: adam
+  adam_betas: (0.9,0.98)
+  adam_eps: 1e-06
+  weight_decay: 0.01
+
+lr_scheduler:
+  _name: polynomial_decay
+  warmup_updates: 1000
+
+model:
+  _name: wav2vec2
+  quantize_targets: true
+  final_dim: 256
+  encoder_layerdrop: 0.05
+  dropout_input: 0.1
+  dropout_features: 0.1
+  feature_grad_mult: 0.1
+  encoder_embed_dim: 768
