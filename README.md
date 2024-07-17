@@ -3,7 +3,8 @@ Scripts for adapting large speech foundation models for Northern Sámi ASR
 
 ## Pre-trained and fine-tuned models
 
-The pre-trained and fine-tuned models are available at [Huggingface Hub](https://huggingface.co/collections/GetmanY1/sami-parliament-wav2vec2-asr-66699110493b618b9ee2bf21)
+The pre-trained and fine-tuned models are available at [Huggingface Hub](https://huggingface.co/collections/GetmanY1/sami-parliament-wav2vec2-asr-66699110493b618b9ee2bf21).
+
 More details on the models are available in the [paper](TODO).
 
 ## Pre-training the models
