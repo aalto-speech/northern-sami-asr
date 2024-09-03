@@ -34,7 +34,8 @@ If you use our models or scripts, please cite our article as:
 
 ```bibtex
 @inproceedings{getman24b_interspeech,
-  title     = {Exploring adaptation techniques of large speech foundation models for low-resource ASR: a case study on Northern Sámi},
+  title     = {Exploring adaptation techniques of large speech foundation models
+ for low-resource ASR: a case study on Northern Sámi},
   author    = {Yaroslav Getman and Tamas Grosz and Katri Hiovain-Asikainen and Mikko Kurimo},
   year      = {2024},
   booktitle = {Interspeech 2024},
