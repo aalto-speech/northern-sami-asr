@@ -5,7 +5,7 @@ Scripts for adapting large speech foundation models for Northern Sámi ASR
 
 The pre-trained and fine-tuned models are available at [Huggingface Hub](https://huggingface.co/collections/GetmanY1/sami-parliament-wav2vec2-asr-66699110493b618b9ee2bf21).
 
-More details on the models are available in the [paper](TODO).
+More details on the models are available in the [paper](https://www.isca-archive.org/interspeech_2024/getman24b_interspeech.html).
 
 ## Pre-training the models
 
@@ -26,7 +26,7 @@ To fine-tune a wav2vec 2.0 Base model using Huggingface Transformers, run
 sbatch scripts/finetuning/huggingface_finetune_multinode_w2v2_B_8gpus_full.sh
 ```
 
-For extended fine-tuning (see Section 3.3 in the [paper](TODO)), set `EXTENDED_FINETUNING` to True in [`scripts/finetuning/huggingface_run_speech_recognition_ctc_multigpu.py`](https://github.com/aalto-speech/northern-sami-asr/blob/38580c7ec9337da5cee8ea7aa31d085b7e63363b/scripts/finetuning/huggingface_run_speech_recognition_ctc_multigpu.py#L620) (line 620)
+For extended fine-tuning (see Section 3.3 in the [paper](https://www.isca-archive.org/interspeech_2024/getman24b_interspeech.html)), set `EXTENDED_FINETUNING` to True in [`scripts/finetuning/huggingface_run_speech_recognition_ctc_multigpu.py`](https://github.com/aalto-speech/northern-sami-asr/blob/38580c7ec9337da5cee8ea7aa31d085b7e63363b/scripts/finetuning/huggingface_run_speech_recognition_ctc_multigpu.py#L620) (line 620)
 
 ## Citation
 
