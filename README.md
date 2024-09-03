@@ -34,12 +34,11 @@ If you use our models or scripts, please cite our article as:
 
 ```bibtex
 @inproceedings{getman24b_interspeech,
-  author={Yaroslav Getman and Tamas Grosz Katri Hiovain-Asikainen and Mikko Kurimo},
-  title={{Exploring adaptation techniques of large speech foundation models for low-resource ASR: a case study on Northern Sámi}},
-  year=2024,
-  booktitle={Proc. INTERSPEECH 2024},
-  pages={XX--XX},
-  doi={XXXX},
-  issn={XXXX-XXXX}
+  title     = {Exploring adaptation techniques of large speech foundation models for low-resource ASR: a case study on Northern Sámi},
+  author    = {Yaroslav Getman and Tamas Grosz and Katri Hiovain-Asikainen and Mikko Kurimo},
+  year      = {2024},
+  booktitle = {Interspeech 2024},
+  pages     = {2539--2543},
+  doi       = {10.21437/Interspeech.2024-479},
 }
 ```
